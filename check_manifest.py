@@ -908,7 +908,7 @@ def build_sdist(tempdir, python=sys.executable, build_isolation=True):
     for k, v in sorted(os.environ.items()):
         print(f"  {k}={v}")
     print("In /opt/virtualenv/cache:")
-    run([python, '-m', 'virtualenv', os.path.join(tempdir, 'env')])
+    run([python, '-m', 'venv', os.path.join(tempdir, 'env')])
     print("Made env OK", os.listdir(os.path.join(tempdir, 'env')))
     if should_use_pep_517():
         # I could do this in-process with
