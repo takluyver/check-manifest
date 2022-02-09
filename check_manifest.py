@@ -904,6 +904,11 @@ def build_sdist(tempdir, python=sys.executable, build_isolation=True):
     Should be run with the current working directory inside the Python package
     you want to build.
     """
+    print("Environment variables:")
+    for k, v in sorted(os.environ.items()):
+        print(f"  {k}={v}")
+    print("In /opt:", os.listdir("/opt"))
+    print("In /opt/virtualenv:", os.listdir("/opt/virtualenv"))
     if should_use_pep_517():
         # I could do this in-process with
         #   import build.__main__
